@@ -1,0 +1,43 @@
+# @author Team 63, Melbourne, 2023
+# Hanying Li (1181148) Haichi Long (1079593) Ji Feng (1412053)
+# Jiayao Lu (1079059) Xinlin Li (1068093)
+
+# Common variables
+availability_zone: melbourne-qh2-uom
+image: bbaf16f8-2484-48d7-b455-42209cc4b8d2
+key_pair: cloud_key
+network: qh2-uom-internal
+security_group: db_server
+
+# Volume
+volumes:
+  - name: node-5-data
+    size: 100
+
+# Security groups
+db_server_security_group:
+  name: db_server
+  description: security group for database servers
+  rules:
+    - protocol: tcp
+      port_range_min: 5984
+      port_range_max: 5984
+      remote_ip_prefix: 0.0.0.0/0
+    - protocol: tcp
+      port_range_min: 4369
+      port_range_max: 4369
+      remote_ip_prefix: 0.0.0.0/0
+    - protocol: tcp
+      port_range_min: 9100
+      port_range_max: 9100
+      remote_ip_prefix: 0.0.0.0/0
+    - protocol: tcp
+      port_range_min: 22
+      port_range_max: 22
+      remote_ip_prefix: 0.0.0.0/0
+
+# Define a list of instances
+instances:
+  - name: node-5
+    volumes: ["node-5-data"]
+    flavor: uom.mse.1c4g

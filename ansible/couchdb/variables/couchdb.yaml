@@ -1,0 +1,23 @@
+---
+# @author Team 63, Melbourne, 2023
+# Hanying Li (1181148) Haichi Long (1079593) Ji Feng (1412053)
+# Jiayao Lu (1079059) Xinlin Li (1068093)
+
+device: /dev/vdb
+mountpoint: /var/lib/docker/volumes
+
+docker_volume:
+  name: couchdb
+  type: volume
+  target: /opt/couchdb/data
+
+docker_container:
+  name: couchdb
+  base_image: ibmcom/couchdb3:3.2.1
+  env:
+    user: admin
+    password: password
+    secret: "a192aeb9904e6590849337933b000c99"
+  ports: ["5984:5984", "4369:4369", "9100:9100"]
+
+

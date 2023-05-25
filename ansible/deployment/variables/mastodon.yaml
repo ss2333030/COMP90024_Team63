@@ -1,0 +1,29 @@
+---
+# @author Team 63, Melbourne, 2023
+# Hanying Li (1181148) Haichi Long (1079593) Ji Feng (1412053)
+# Jiayao Lu (1079059) Xinlin Li (1068093)
+
+device: /dev/vdb
+mountpoint: /var/lib/docker/volumes
+repo_directory: /var/lib/docker/volumes/repo
+git_username: ss2333030
+git_password: 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
+
+docker_volume:
+  name: mastodon
+  type: volume
+  target: /mastodon
+
+docker_image:
+  name: mastodon
+  path: /var/lib/docker/volumes/repo/mastodon
+
+docker_container_name: mastodon
+
+mastodon_servers:
+  node-1:
+    access_token: "zaRX-MrT0uQvx--FCvpjHgWKGx1qCaBftpIpHotAMZM"
+    api_base_url: "https://mstdn.social/"
+  node-2: 
+    access_token: "57q9jJzx7y6__lA4mvOWN8OjuNU-i6OYptJa65GIwOo"
+    api_base_url: "https://mastodon.social/"

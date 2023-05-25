@@ -1,0 +1,30 @@
+# @author Team 63, Melbourne, 2023
+# Hanying Li (1181148) Haichi Long (1079593) Ji Feng (1412053)
+# Jiayao Lu (1079059) Xinlin Li (1068093)
+
+- name: Checking folders
+  become: true
+  ansible.builtin.stat:
+    path: "{{ repo_directory }}"
+  register: directory_stats
+
+- name: Remove the old repo
+  become: true
+  ansible.builtin.file:
+    path: "{{ repo_directory }}"
+    state: absent
+  when: directory_stats.stat.exists == true
+
+- name: Create a directory for the application
+  become: true
+  ansible.builtin.file:
+    path: "{{ repo_directory }}"
+    recurse: true
+    state: directory
+
+- name: Get backend server from GitHub
+  become: true
+  ansible.builtin.git:
+    repo: "https://{{ git_username }}:{{ git_password }}@github.com/ss2333030/COMP90024_Team63"
+    dest: "{{ repo_directory }}"
+

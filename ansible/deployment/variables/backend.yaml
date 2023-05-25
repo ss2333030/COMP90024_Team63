@@ -1,0 +1,23 @@
+---
+# @author Team 63, Melbourne, 2023
+# Hanying Li (1181148) Haichi Long (1079593) Ji Feng (1412053)
+# Jiayao Lu (1079059) Xinlin Li (1068093)
+
+device: /dev/vdb
+mountpoint: /var/lib/docker/volumes
+repo_directory: /var/lib/docker/volumes/repo
+git_username: ss2333030
+git_password: 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
+
+docker_volume:
+  name: backend
+  type: volume
+  target: /backend
+
+docker_image:
+  name: backend
+  path: /var/lib/docker/volumes/repo/backend
+
+docker_container:
+  name: backend
+  ports: ["80:80"]
