@@ -1,0 +1,81 @@
+<div id="template">
+    {{>aside}}
+    <div id = "content">
+      <div id="controls" class="nicebox">
+        <div id="legend">
+          <div id="census-min">MIN</div>
+            <div class="color-key"><span id="data-caret">&#x25c6;</span></div>
+          <div id="census-max">MAX</div>
+        </div>
+          <div id="data-box" class="nicebox">
+            <label id="data-label" for="data-value"></label>
+            <span id="data-value"></span>
+        </div>
+      </div>
+
+      <div id="mapInfo" value = {{id}}>
+        <div id = "showMap">
+            <div id="map"></div>
+            <div id ="caption">
+              <p>Scenraio {{id}} </p>
+            </div>
+        </div>
+        <div id="mapData">
+          <h3>Information of selected area</h3>
+          {{#showInformationById id}}
+              <div id="totalB">
+                <div>Business Level</div>
+                <span></span>
+              </div>
+              <div id ="bigB">
+                <div>Large Business Percentage</div>
+                <span></span>
+                </div>
+              <div id ="smallB">
+                <div>Small Business Percentage</div>
+                <span></span>
+              </div>
+            {{/showInformationById}}
+
+          {{#showHealthById id}}
+            <div id="totalB">
+              <div>Obesity</div>
+              <span></span>
+            </div>
+            <div id ="bigB">
+              <div>Alchohol</div>
+              <span></span>
+              </div>
+            <div id ="smallB">
+              <div>Smoker</div>
+              <span></span>
+            </div>
+          {{/showHealthById}}
+          
+          {{#showClimateById id}}
+            <div id="totalB">
+              <div>Bus</div>
+              <span></span>
+            </div>
+            <div id ="bigB">
+              <div>Train</div>
+              <span></span>
+              </div>
+            <div id ="smallB">
+              <div>Tram</div>
+              <span></span>
+            </div>
+          {{/showClimateById}}
+        </div>
+      </div>
+    
+      <div id="about">
+        <div><h3>Hypothesis of Scenraio{{id}}</h3></div>
+        <div id ="hypo">{{showContentById id}}</div>
+      </div>
+    </div>
+
+</div>
+
+
+<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbTncZ7R10mswdhSA__9LaYyF6tohVewU&callback=initMap&v=weekly"></script>

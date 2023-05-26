@@ -1,0 +1,32 @@
+<div id="template">
+    {{>aside}}
+
+    {{#showHealthById id}}
+        <div id = "graph">
+            <figure>
+                <img src="/img/healthDrink.jpg" alt="">
+                <figcaption>Drinking Alcohol</figcaption>
+            </figure>
+            <figure>
+                <img src="/img/healthSmoke.jpg" alt="">
+                <figcaption>Smoking</figcaption>
+            </figure>
+            <img src="/img/tweetAtDay.jpg" alt="">
+            <img src="/img/tweetAtNight.jpg" alt="">
+        </div>
+    {{/showHealthById}}
+
+    {{#showClimateById id}}
+        <div id = "graph">
+            <img src="/img/env1.jpg" alt="">
+            <img src="/img/env2.jpg" alt="">
+            <img src="/img/climate1.jpg" alt="">
+        </div>
+    {{/showClimateById }}
+    {{#showUnById id}}
+        <div id = "graph">
+            <img src="/img/tweetVsState.jpg" alt="">
+            <img src="/img/unemploymentNight.jpg" alt="">
+        </div>
+    {{/showUnById}}
+</div>

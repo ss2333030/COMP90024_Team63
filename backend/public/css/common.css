@@ -1,0 +1,51 @@
+main,#template,#homepage{
+    height: inherit;
+}
+#template{
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+}
+#content{
+    display: grid;
+    grid-template-rows: 0.5fr 3fr 1fr;
+    padding: 15px 20px;
+    overflow: scroll;
+    /* grid-template-areas: 
+    "controls"
+    "#mapInfo"
+    "#about"
+    ; */
+}
+#notFound{
+    display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: inherit;
+  }
+
+
+#controls{
+    background-color: red;
+    
+}
+#mapInfo{
+
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+}
+#showMap{
+    display: grid;
+    grid-template-rows: 5fr 0.5fr;
+}
+
+#mapData > div, #showMap>div{
+    margin: 10px;
+}
+
+#about{
+    background-color: rgb(160, 160, 231);
+}
+#caption p{
+    text-align: center;
+}
